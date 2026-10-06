@@ -1,6 +1,8 @@
 "use client";
 import {useState,useEffect} from "react";
 
+const serviceLinks=["/workforce-solutions","/cleaning-services","/construction-support","/landscaping","/property-services","#contact"];
+
 const copy={
 en:{
 languageLabel:"Language",explore:"EXPLORE →",workforceTag:"01 / WORKFORCE",servicesTag:"02 / SERVICES",
@@ -38,7 +40,7 @@ export default function Home(){const[lang,setLang]=useState("en");const t=copy[l
 <section className="hero"><div><div className="eyebrow">{t.ey}</div><h1>{t.hero1}<br/><em>{t.hero2}</em></h1><p className="heroLead">{t.lead}</p><div className="actions"><a className="primary" href="/workforce-solutions#request">{t.workers} →</a><a className="secondary" href={"mailto:hello@rema2.com?subject="+t.service}>{t.service}</a></div></div><div className="heroBottom"><span>{t.based}</span><span>•</span><span>{t.area}</span></div></section>
 <section className="choice"><div className="choiceCard dark"><span className="tag">{t.workforceTag}</span><h2>{t.needPeople}</h2><p>{t.capacityText}</p><a href="/workforce-solutions">{t.reqWorkers}</a></div><div className="choiceCard light"><span className="tag">{t.servicesTag}</span><h2>{t.needDone}</h2><p>{t.doneText}</p><a href="#contact">{t.reqService}</a></div></section>
 <section className="intro" id="solutions"><div><div className="eyebrow">{t.multi}</div><h2>{t.built}</h2></div><p>{t.builtText}</p></section>
-<section className="grid">{t.services.map((s,i)=><article key={s[0]}><b>0{i+1}</b><h3>{s[0]}</h3><p>{s[1]}</p><a href={i===0?"/workforce-solutions":"#contact"}>{t.explore}</a></article>)}</section>
+<section className="grid">{t.services.map((s,i)=><article key={s[0]}><b>0{i+1}</b><h3>{s[0]}</h3><p>{s[1]}</p><a href={serviceLinks[i]}>{t.explore}</a></article>)}</section>
 <section className="story" id="story"><div className="storyHead"><div className="eyebrow">{t.storyTag}</div><h2>{t.storyTitle}</h2></div><div className="storyCopy"><p>{t.storyP1}</p><p>{t.storyP2}</p><strong>{t.storyBold}</strong></div></section>
 <section className="legacy"><div className="eyebrow">{t.legacy}</div><div className="legacyStats"><div><strong>1,400+</strong><span>{t.stat1}</span></div><div><strong>200+</strong><span>{t.stat2}</span></div><div><strong>5M+</strong><span>{t.stat3}</span></div><div><strong>1,900+</strong><span>{t.stat4}</span></div></div><p className="legacyNote">{t.legacyNote}</p></section>
 <section className="people"><div><div className="eyebrow">{t.peopleTag}</div><h2>{t.peopleTitle}</h2><p>{t.peopleText}</p></div><blockquote>{t.peopleQuote}</blockquote></section>
