@@ -2,6 +2,7 @@ const areaServed = [
   { "@type": "State", name: "Massachusetts" },
   { "@type": "State", name: "New Hampshire" },
 ];
+const servicePaths = ["/workforce-solutions", "/cleaning-services", "/construction-support", "/landscaping", "/property-services", "/#reporting"];
 const services = [
   ["Workforce Solutions", "Supplemental crews for recurring operations, workload peaks, special projects and workforce coverage."],
   ["Cleaning Services", "Commercial, post-construction, turnover, deep cleaning and recurring cleaning support."],
@@ -24,9 +25,10 @@ export const structuredData = {
       sameAs: ["https://www.instagram.com/rema2us/", "https://www.facebook.com/profile.php?id=61591892310845"],
       hasOfferCatalog: {
         "@type": "OfferCatalog", name: "Workforce and Field Services",
-        itemListElement: services.map(([name, description]) => ({
+        itemListElement: services.map(([name, description], index) => ({
           "@type": "Offer", itemOffered: {
             "@type": "Service", name, description, areaServed,
+            url: "https://rema2.com" + servicePaths[index],
             provider: { "@id": "https://rema2.com/#organization" },
           },
         })),
