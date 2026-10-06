@@ -69,7 +69,7 @@ export default function WorkforceSolutions() {
     </section>
     <section className="staffingSection staffingLight staffingSplit">
       <div><div className="eyebrow">ONE PARTNER. TWO WAYS TO HELP.</div><h2>Need people,<br/>or need it done?</h2></div>
-      <div><p>Request workers to add capacity to your existing team, or ask REMA² to take responsibility for a field service, crew coordination and execution.</p><p>Our services include construction support, cleaning, landscaping and property services. We will discuss which approach fits your project.</p><a className="staffingTextLink" href="/#solutions">EXPLORE ALL SOLUTIONS →</a></div>
+      <div><p>Request workers to add capacity to your existing team, or ask REMA² to take responsibility for a field service, crew coordination and execution.</p><p>Our services include <a className="serviceInlineLink" href="/construction-support">construction support</a>, <a className="serviceInlineLink" href="/cleaning-services">cleaning</a>, <a className="serviceInlineLink" href="/landscaping">landscaping</a> and <a className="serviceInlineLink" href="/property-services">property services</a>. We will discuss which approach fits your project.</p><a className="staffingTextLink" href="/#solutions">EXPLORE ALL SOLUTIONS →</a></div>
     </section>
     <section className="staffingSection staffingFaq"><div className="eyebrow">BEFORE YOU REQUEST A TEAM</div><h2>Common questions.</h2>
       {faqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}
