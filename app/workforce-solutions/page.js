@@ -75,7 +75,7 @@ export default function WorkforceSolutions() {
       {faqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}
     </section>
     <section className="staffingSection staffingLight staffingRequest" id="request">
-      <div><div className="eyebrow">LET'S GET TO WORK</div><h2>Request workers.</h2><p className="sectionLead">Tell us about the work. Use the short request below to prepare an email, or speak with us directly.</p>
+      <div><div className="eyebrow">LET'S GET TO WORK</div><h2>Request workers.</h2><p className="sectionLead">Tell us about the work. Send your request directly using the form, or speak with us by phone.</p>
         <div className="staffingContact"><a href="tel:+19786487729">(978) 648-7729</a><a href="mailto:hello@rema2.com">hello@rema2.com</a><span>Monday–Friday, 7 AM–6 PM</span><span>Based in Woburn, MA · Serving MA & NH</span></div>
       </div><StaffingRequest />
     </section>

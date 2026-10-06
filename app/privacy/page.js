@@ -1,0 +1,9 @@
+export const metadata = { title: "Privacy notice | REMA² Group", description: "How REMA² Group handles website inquiries and optional analytics.", alternates: { canonical: "/privacy" } };
+export default function PrivacyPage() {
+  return <main className="privacyPage"><a className="brand" href="/">REMA<sup>2</sup><span>GROUP</span></a><h1>Privacy notice</h1><p>Updated October 6, 2026.</p>
+    <h2>Requests and contact details</h2><p>When you send a request, REMA² Group receives the contact details and project information you enter. We use them to respond, discuss the work and prepare a quote. Please avoid including sensitive personal information in your message.</p>
+    <h2>Website services</h2><p>Our website is hosted on Netlify. Netlify Forms processes and stores submitted requests and can send email notifications to our business inbox. These services process the information needed to operate the site and deliver your request.</p>
+    <h2>Optional analytics</h2><p>If you allow analytics, Google Analytics measures page visits, successful form submissions and clicks on our phone and email links. We do not send the name, email, phone number, company, project location or message entered in the form to Analytics. Analytics uses cookies and processes technical visit information, such as browser, device and approximate geographic information.</p><p>Analytics is optional. You can decline it or change your decision using “Privacy choices” on the site. Forms and contact links work without analytics. Advertising features are disabled in our website tag.</p>
+    <h2>Contact us</h2><p>For questions about your information or a request to access or delete information you submitted, email <a href="mailto:hello@rema2.com">hello@rema2.com</a> or call <a href="tel:+19786487729">(978) 648-7729</a>.</p><p><a href="/">← Return to the website</a></p>
+  </main>;
+}
