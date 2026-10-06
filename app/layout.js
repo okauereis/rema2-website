@@ -1,4 +1,5 @@
 import "./globals.css";
+import SiteAnalytics from "./site-analytics";
 import { structuredData } from "./site-data";
 
 const title = "REMA² Group | Workforce & Field Services in MA & NH";
@@ -23,5 +24,6 @@ export default function RootLayout({ children }) {
   return <html lang="en"><body>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
     {children}
+    <SiteAnalytics />
   </body></html>;
 }
