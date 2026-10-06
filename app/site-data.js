@@ -21,7 +21,7 @@ export const structuredData = {
       url: "https://rema2.com/", logo: "https://rema2.com/logo.png",
       description: "Workforce solutions and field services for businesses and contractors. Based in Woburn, Massachusetts, serving Massachusetts and New Hampshire.",
       telephone: "+1-978-648-7729", email: "hello@rema2.com", areaServed,
-      sameAs: ["https://www.instagram.com/rema2us/"],
+      sameAs: ["https://www.instagram.com/rema2us/", "https://www.facebook.com/profile.php?id=61591892310845"],
       hasOfferCatalog: {
         "@type": "OfferCatalog", name: "Workforce and Field Services",
         itemListElement: services.map(([name, description]) => ({
