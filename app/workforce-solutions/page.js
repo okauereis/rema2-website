@@ -49,7 +49,7 @@ export default function WorkforceSolutions() {
     <section className="hero staffingHero">
       <div className="breadcrumbs"><a href="/">Home</a><span>/</span><span>Workforce Solutions</span></div>
       <div className="eyebrow">WORKFORCE SOLUTIONS · MASSACHUSETTS & NEW HAMPSHIRE</div>
-      <h1>Construction staffing.<br/><em>Workforce solutions in MA & NH.</em></h1>
+      <h1>Construction staffing.<br/><em>Workforce solutions.</em></h1>
       <p className="heroLead">Staffing and supplemental field crews for businesses and contractors in Massachusetts and New Hampshire. Based in Woburn, REMA² helps you add workforce capacity for projects, recurring operations and changing workloads.</p>
       <div className="actions"><a className="primary" href="#request">REQUEST A STAFFING QUOTE →</a><a className="secondary" href="tel:+19786487729">CALL (978) 648-7729</a></div>
       <p className="staffingHours">Monday–Friday, 7 AM–6 PM · Saturday & Sunday closed</p>
