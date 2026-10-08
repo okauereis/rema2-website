@@ -2,8 +2,8 @@ import "./globals.css";
 import SiteAnalytics from "./site-analytics";
 import { structuredData } from "./site-data";
 
-const title = "REMA² Group | Workforce & Field Services in MA & NH";
-const description = "Workforce solutions, construction support, cleaning and property services for businesses in Massachusetts and New Hampshire. Based in Woburn, MA.";
+const title = "REMA² Group | Staffing & Field Services in MA & NH";
+const description = "Construction staffing, supplemental crews, cleaning, landscaping and property services in Massachusetts and New Hampshire. Based in Woburn, MA.";
 
 export const metadata = {
   metadataBase: new URL("https://rema2.com"),
