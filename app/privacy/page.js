@@ -1,4 +1,6 @@
-export const metadata = { title: "Privacy notice | REMA² Group", description: "How REMA² Group handles website inquiries and optional analytics.", alternates: { canonical: "/privacy" } };
+const title = "Privacy notice | REMA² Group";
+const description = "How REMA² Group handles website inquiries and optional analytics.";
+export const metadata = { title, description, alternates: { canonical: "/privacy" }, openGraph: { title, description, url: "/privacy", type: "website", images: ["/social-card.png"] }, twitter: { card: "summary_large_image", title, description, images: ["/social-card.png"] } };
 export default function PrivacyPage() {
   return <main className="privacyPage"><a className="brand" href="/">REMA<sup>2</sup><span>GROUP</span></a><h1>Privacy notice</h1><p>Updated October 6, 2026.</p>
     <h2>Requests and contact details</h2><p>When you send a request, REMA² Group receives the contact details and project information you enter. We use them to respond, discuss the work and prepare a quote. Please avoid including sensitive personal information in your message.</p>

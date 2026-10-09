@@ -20,7 +20,9 @@ export default function SiteAnalytics() {
   const [consent, setConsent] = useState(null);
   const [showChoices, setShowChoices] = useState(false);
   const [ready, setReady] = useState(false);
+  const [production, setProduction] = useState(false);
   useEffect(() => {
+    setProduction(["rema2.com", "www.rema2.com"].includes(window.location.hostname));
     let saved = null;
     try { saved = localStorage.getItem(consentKey); } catch {}
     setConsent(saved);
@@ -57,8 +59,9 @@ export default function SiteAnalytics() {
     }
   }
   return <>
-    {measurementId && consent === "allow" && <Script id="rema2-analytics" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`} strategy="afterInteractive" onReady={() => {
+    {measurementId && production && consent === "allow" && <Script id="rema2-analytics" src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`} strategy="afterInteractive" onReady={() => {
       if (!allowed() || !["rema2.com", "www.rema2.com"].includes(window.location.hostname)) return;
+      window[`ga-disable-${measurementId}`] = false;
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () { window.dataLayer.push(arguments); };
       window.gtag("consent", "default", { analytics_storage: "granted", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });

@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const lastModified = new Date();
+  const lastModified = new Date("2026-10-09T00:00:00Z");
   return [
     { url: "https://rema2.com/", lastModified, changeFrequency: "weekly", priority: 1 },
     { url: "https://rema2.com/workforce-solutions", lastModified, changeFrequency: "monthly", priority: 0.9 },
