@@ -6,6 +6,19 @@ import { usePathname } from "next/navigation";
 const measurementId = "G-6T9L05WTTZ";
 const consentKey = "rema2-analytics-consent";
 let analyticsReady = false;
+// Only recognize the fixed internal-test link; never forward arbitrary query values.
+function internalTestParameters(search) {
+  const params = new URLSearchParams(search);
+  if (params.get("utm_source") !== "rema2" ||
+      params.get("utm_medium") !== "internal_test" ||
+      params.get("utm_campaign") !== "website_verification") return {};
+  return {
+    campaign_source: "rema2",
+    campaign_medium: "internal_test",
+    campaign_name: "website_verification",
+  };
+}
+
 function allowed() {
   try { return localStorage.getItem(consentKey) === "allow"; } catch { return false; }
 }
@@ -66,7 +79,7 @@ export default function SiteAnalytics() {
       window.gtag = function () { window.dataLayer.push(arguments); };
       window.gtag("consent", "default", { analytics_storage: "granted", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
       window.gtag("js", new Date());
-      window.gtag("config", measurementId, { page_location: window.location.origin + window.location.pathname, page_referrer: document.referrer ? new URL(document.referrer).origin : "", send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false });
+      window.gtag("config", measurementId, { ...internalTestParameters(window.location.search), page_location: window.location.origin + window.location.pathname, page_referrer: document.referrer ? new URL(document.referrer).origin : "", send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false });
       analyticsReady = true;
       setReady(true);
     }} />}
