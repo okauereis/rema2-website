@@ -1,0 +1,10 @@
+"use client";
+import Link from "next/link";
+import {useState} from "react";
+const catalog={
+ en:{button:"SERVICES",all:"Explore all solutions",contact:"Request a consultation",groups:[["Business","Consulting · Operations · Marketing · Websites"],["Property","Landscaping · Hardscaping · Cleaning · Snow & Ice · Maintenance"],["Construction","Masonry · Concrete · Renovations · Painting · Demolition"],["Workforce","Specialized crews · Staffing · Coordination"]]},
+ pt:{button:"SERVIÇOS",all:"Conheça todas as soluções",contact:"Solicitar uma consulta",groups:[["Business","Consultoria · Operações · Marketing · Sites"],["Property","Paisagismo · Hardscaping · Limpeza · Neve e gelo · Manutenção"],["Construction","Alvenaria · Concreto · Reformas · Pintura · Demolição"],["Workforce","Equipes especializadas · Profissionais · Coordenação"]]},
+ es:{button:"SERVICIOS",all:"Conozca todas las soluciones",contact:"Solicitar una consulta",groups:[["Business","Consultoría · Operaciones · Marketing · Sitios web"],["Property","Paisajismo · Hardscaping · Limpieza · Nieve y hielo · Mantenimiento"],["Construction","Albañilería · Concreto · Reformas · Pintura · Demolición"],["Workforce","Equipos especializados · Personal · Coordinación"]]}
+};
+const slugs=["business","property","construction","workforce"];
+export default function ServicesMenu({lang="en"}){const [open,setOpen]=useState(false);const t=catalog[lang]||catalog.en;return <div className="servicesMenu"><button className="servicesMenuToggle" type="button" aria-expanded={open} aria-controls="rema-services-panel" onClick={()=>setOpen(!open)}>{t.button}<span aria-hidden="true" className={open?"servicesChevron active":"servicesChevron"}>⌄</span></button>{open&&<div id="rema-services-panel" className="servicesMenuPanel"><div className="servicesMenuTitle">{t.all}</div>{t.groups.map((g,i)=><Link key={slugs[i]} href={"/solutions/"+slugs[i]+"?lang="+lang} onClick={()=>setOpen(false)}><strong>REMA² {g[0]}</strong><span>{g[1]}</span><b aria-hidden="true">→</b></Link>)}<Link className="servicesMenuContact" href={"/?lang="+lang+"#contact"} onClick={()=>setOpen(false)}>{t.contact} →</Link></div>}</div>}
