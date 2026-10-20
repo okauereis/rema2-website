@@ -1,0 +1,30 @@
+name: Validate REMA2 website
+on:
+  push:
+    branches: [repositioning-intelligence-hub]
+  pull_request:
+    branches: [main]
+jobs:
+  build-and-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: package.json
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Build Next.js
+        run: npm run build
+      - name: Start server and test routes
+        run: |
+          npm run start > /tmp/rema2-next.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://localhost:3000/ >/dev/null && break || sleep 2; done
+          for route in / /solutions/business /solutions/property /solutions/construction /solutions/workforce /privacy /__forms.html; do
+            echo "Checking $route"
+            curl -fsS "http://localhost:3000$route" >/dev/null
+          done
+          echo "Route smoke tests passed"

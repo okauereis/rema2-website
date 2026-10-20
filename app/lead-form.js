@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import { trackEvent } from "./site-analytics";
 
-const services = ["Workforce solutions", "Cleaning services", "Construction support", "Landscaping", "Property services", "Projects & operations"];
+const services = ["Business intelligence", "Property intelligence", "Construction intelligence", "Workforce intelligence", "General inquiry"];
 const copy = {
   en: { name: "Contact name", email: "Email", phone: "Phone (optional)", company: "Company (optional)", service: "Service needed", location: "Project city & state", workers: "Number of workers (optional)", schedule: "Preferred start date & schedule (optional)", details: "Tell us about the work", send: "SEND REQUEST →", sending: "SENDING…", success: "Thank you — your request has been received. Our team will contact you using the details provided.", error: "Your request could not be sent. Please try again, or call (978) 648-7729.", note: "We use these details to respond to your request.", privacy: "Privacy notice", another: "Send another request" },
   pt: { name: "Nome do contato", email: "E-mail", phone: "Telefone (opcional)", company: "Empresa (opcional)", service: "Serviço desejado", location: "Cidade e estado do projeto", workers: "Número de profissionais (opcional)", schedule: "Data de início e horários desejados (opcional)", details: "Conte sobre o trabalho", send: "ENVIAR SOLICITAÇÃO →", sending: "ENVIANDO…", success: "Obrigado — recebemos sua solicitação. Nossa equipe entrará em contato pelos dados informados.", error: "Não foi possível enviar. Tente novamente ou ligue para (978) 648-7729.", note: "Usamos esses dados para responder à sua solicitação.", privacy: "Aviso de privacidade", another: "Enviar outra solicitação" },
